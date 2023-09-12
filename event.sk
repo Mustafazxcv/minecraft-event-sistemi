@@ -1,0 +1,43 @@
+Options:
+    p: &3Skyblock &8»
+
+
+
+command /Event:
+	permission: event.yap
+	permission message: &fBilinmeyen Komut.
+	trigger:
+		execute console command "bc &bEvent başlıyor..."
+		send players title "&8▶ &7Evente son &8► &a5 &8◀"
+		wait 1 second
+		send players title "&8▶ &7Evente son &8► &a4 &8◀"
+		wait 1 second
+		send players title "&8▶ &7Evente son &8► &a3 &8◀"
+		wait 1 second
+		send players title "&8▶ &7Evente son &8► &a2 &8◀"
+		wait 1 second
+		send players title "&8▶ &7Evente son &8► &a1 &8◀"
+		loop all players:
+			execute console command "give %loop-player% 7 1 name:&6►_&e&nEvent_Sandığı&8_(&7&nYere_Koy&8)_&6◄"
+		wait 2 seconds
+		execute console command "hsp giveall Netheryıldızı 1"
+		wait 2 seconds
+		execute console command "crazycrates giveall p spawner 2"
+		wait 2 seconds
+		execute console command "eco give * 100000000000"
+		wait 2 seconds
+		broadcast "&e&lSKYBLOCK &8▶ &7Event bitmiştir iyi oyunlar."
+
+on place a bedrock:
+	if tool's display name is "&6► &e&nEvent Sandığı&8 (&7&nYere Koy&8) &6◄":
+		set event-block to chest
+		remove bedrock named "&6► &e&nEvent Sandığı&8 (&7&nYere Koy&8) &6◄" from player
+		wait 0.50 seconds
+		add 128 diamond block to event-block's inventory      
+		add 128 emerald block to event-block's inventory      
+		add 64 112 to event-block's inventory      
+		add 64  Quartaz ore   to event-block's inventory      
+		add 128 ender stone to event-block's inventory      
+		add 128 sponge to event-block's inventory
+		add 128 prismarine block to event-block's inventory
+		add 128 emerald ore block to event-block's inventory
